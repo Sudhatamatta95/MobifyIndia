@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI Power Bank - Mobify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="holder2.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="main.html" class="logo">
+                <div class="logo-icon">🛒</div>
+                <div class="logo-text">
+                    <h1>Mobify</h1>
+                    <span>INDIA</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="main.html" class="nav-link">Home</a></li>
+                <li><a href="main.html#products" class="nav-link">Products</a></li>
+                <li><a href="contactUs.html" class="nav-link">Contact</a></li>
+                <li><a href="aboutUS.html" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search products..." id="productSearch">
+                    <span class="search-icon" id="searchBtn">🔍</span>
+                </div>
+                <button class="modern-cart-btn" onclick="toggleCart()">
+                    <div class="cart-icon-wrapper">
+                        <div class="cart-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="cart-badge" id="cartCount">0</span>
+                        </div>
+                    </div>
+                    <div class="cart-text"><span class="cart-label">Cart</span></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()">✕</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-total">
+            <strong>Total: ₹<span id="cartTotal">0</span></strong>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Product Detail Container -->
+    <div class="product-detail-container">
+        
+        <!-- Product Images Section -->
+        <div class="product-images">
+            <div class="main-image">
+                <img src="powerbank1.png" alt="Wireless Bluetooth Earbuds" id="mainImage">
+            </div>
+            <div class="thumbnail-images">
+                <img src="powerbank1.png" alt="Earbuds with Case" class="thumbnail active" onclick="changeImage(this)">
+                <img src="powerbank2.png" alt="Single Earbud" class="thumbnail" onclick="changeImage(this)">
+                <img src="powerbank3.png" alt="Charging Case" class="thumbnail" onclick="changeImage(this)">
+                <img src="powerbank4.png" alt="In Use" class="thumbnail" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Info Section -->
+        <div class="product-info">
+            <div class="product-header">
+                <h1 class="product-name">MI Power Bank</h1>
+                <div class="product-rating">
+                    <div class="stars">★★★★☆</div>
+                    <span class="rating-count">3.9 (822 reviews)</span>
+<br>
+                </div>
+<p class="abhi">compact, easy to carry, powerfull & reliable - keep your devices charged at anytime, anywhere.</p>
+
+            </div>
+
+            <div class="price-section">
+                <span class="current-price">₹1190</span>
+                <span class="old-price">₹1,499</span>
+                <span class="discount-percent">25% OFF</span>
+            </div>
+
+            <div class="product-features">
+                <h3>Key Features of product:</h3>
+                <ul>
+                    <li>✓ 🔋 10000mAh High-Capacity Battery – charges most smartphones 2–3 times</li>
+                    <li>✓⚡ Fast Charging Support – efficient power delivery for quick top-ups</li>
+                    <li>✓ 🔌 Dual USB Output Ports – charge two devices at the same time</li>
+                    <li>✓👜 Slim & Portable Design – easy to carry in pocket or bag</li>
+                </ul>
+            </div>
+
+            <div class="quantity-section">
+                <label>Quantity:</label>
+                <div class="quantity-controls">
+                    <button onclick="decreaseQty()">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="10">
+                    <button onclick="increaseQty()">+</button>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                 <button onclick="goToLogin()">Buy Now</button>                
+                
+            </div>
+
+            <div class="delivery-info">
+                <div class="delivery-item">
+                    <strong>🚚 Free Delivery</strong> | <strong>💰 COD Available</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Description Tabs -->
+    <div class="description-container"> 
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'description')">Description</button>
+            <button class="tab-button" onclick="openTab(event, 'specifications')">Specifications</button>
+        </div>
+
+        <!-- Description Tab -->
+        <div id="description" class="tab-content active">
+            <h3>Product Description</h3>
+            <p>
+                Stay powered up with our 10000mAh Power Bank featuring dual USB ports, fast charging, and slim portable design for charging multiple devices on the go.
+            </p>
+        </div>
+
+        <!-- Specifications Tab -->
+        <div id="specifications" class="tab-content">
+            <h3>Technical Specifications</h3>
+            <table class="specs-table">
+                <tr>
+                    <td><strong>Capacity</strong></td>
+                    <td>10000mAh Lithium Polymer</td>
+                </tr>
+                <tr>
+                    <td><strong>Output</strong></td>
+                    <td>18W Fast Charging</td>
+                </tr>
+                <tr>
+                    <td><strong>Ports</strong></td>
+                    <td>Dual USB + USB-C</td>
+                </tr>
+                <tr>
+                    <td><strong>Weight</strong></td>
+                    <td>434g</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        // Tab functionality
+function openTab(event, tabName) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Remove active class from all buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Show selected tab and mark button as active
+    document.getElementById(tabName).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
+
+
+function changeImage(clickedImg) {
+    // Main image element को find करें
+    const mainImage = document.getElementById('mainImage');
+    
+    // Clicked thumbnail की src को main image में set करें
+    mainImage.src = clickedImg.src;
+    
+    // Alt text भी update करें
+    mainImage.alt = clickedImg.alt;
+}
+
+
+function increaseQty() {
+    const quantityInput = document.getElementById('quantity');
+    let currentValue = parseInt(quantityInput.value);
+    const maxValue = parseInt(quantityInput.max) || 10;
+    
+    if (currentValue < maxValue) {
+        quantityInput.value = currentValue + 1;
+    }
+}
+
+function decreaseQty() {
+    const quantityInput = document.getElementById('quantity');
+    let currentValue = parseInt(quantityInput.value);
+    const minValue = parseInt(quantityInput.min) || 1;
+    
+    if (currentValue > minValue) {
+        quantityInput.value = currentValue - 1;
+    }
+}
+
+// Cart management with localStorage
+class ShoppingCart {
+    constructor() {
+        this.cart = this.loadCart();
+        this.updateCartCount();
+    }
+    
+    addToCart(product) {
+        const quantity = parseInt(document.getElementById('quantity').value) || 1;
+        const existingItem = this.cart.find(item => item.id === product.id);
+        
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            this.cart.push({
+                ...product,
+                quantity: quantity
+            });
+        }
+        
+        this.saveCart();
+        this.updateCartCount();
+        this.showNotification('Product added to cart!');
+    }
+    
+    saveCart() {
+        localStorage.setItem('shopping-cart', JSON.stringify(this.cart));
+    }
+    
+    loadCart() {
+        const savedCart = localStorage.getItem('shopping-cart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    }
+    
+    updateCartCount() {
+        const count = this.cart.reduce((total, item) => total + item.quantity, 0);
+        const cartCountElement = document.querySelector('.cart-count');
+        if (cartCountElement) {
+            cartCountElement.textContent = count;
+        }
+    }
+    
+    showNotification(message) {
+        // Simple notification
+        const notification = document.createElement('div');
+        notification.className = 'cart-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+}
+
+// Initialize cart
+const shoppingCart = new ShoppingCart();
+
+
+
+function goToLogin() {
+    // Redirect user to your login page
+    window.location.href = 'loginnn.html';  // <-- yaha tumhare login page ka path
+}
+
+
+
+
+    </script>
+</body>
+</html>
