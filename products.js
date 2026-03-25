@@ -1,15 +1,6 @@
-// Helper function to lighten colors
-function lightenColor(color) {
-  const num = parseInt(color.replace("#",""), 16);
-  const r = Math.min(255, Math.floor(num / 65536) + 50);
-  const g = Math.min(255, Math.floor((num / 256) % 256) + 50);
-  const b = Math.min(255, (num % 256) + 50);
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
 // Products data - Easy to manage and update
 const PRODUCTS = [
-  { id: 1, name: 'Bluetooth Speaker', price: 999, oldPrice: 1299, discount: '30%', link: 'bluetoothspeaker.html', image: 'blutut.png', rating: '3.4', reviews: 88, desc: '15W fast wireless charging pad with LED indicator and anti-slip surface.' },
+  { id: 1, name: 'Bluetooth Speaker', price: 999, oldPrice: 1299, discount: '30%', link: 'bluetoothspeaker.html', image: 'blutut.png', rating: '3.4', reviews: 88, desc: 'High-quality 15W Bluetooth speaker with powerful bass and LED indicator.' },
   { id: 2, name: 'Type-C Cable', price: 449, oldPrice: 599, discount: '25%', link: 'cable.html', image: 'cabal.png', rating: '4.0', reviews: 732, desc: 'Durable, high-speed, and reliable charging and sync.' },
   { id: 3, name: 'Phone Holder Stand', price: 799, oldPrice: 1299, discount: '40%', link: 'holder2.html', image: 'holder.png', rating: '4.8', reviews: 92, desc: 'Adjustable phone holder for hands-free usage.' },
   { id: 4, name: 'MI PowerBank', price: 1099, oldPrice: 1499, discount: '25%', link: 'powerbank.html', image: 'powerbank.png', rating: '4.8', reviews: 92, desc: 'Compact powerbank for anytime, anywhere charging.' },
@@ -24,18 +15,13 @@ const PRODUCTS = [
   { id: 13, name: 'Wireless Bluetooth Neckband', price: 899, oldPrice: 1499, discount: '40%', link: 'adneckband.html', image: 'neckband1.jpg', rating: '3.2', reviews: 298, desc: 'Immersive sound with long-lasting comfort.' }
 ];
 
-// Helper function to lighten colors
-function lightenColor(color) {
-  const num = parseInt(color.replace("#",""), 16);
-  const r = Math.min(255, Math.floor(num / 65536) + 50);
-  const g = Math.min(255, Math.floor((num / 256) % 256) + 50);
-  const b = Math.min(255, (num % 256) + 50);
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
 // Render all products dynamically
 function renderProducts() {
   const container = document.querySelector('.products-container');
+  if (!container) {
+    console.error('Products container not found!');
+    return;
+  }
   container.innerHTML = PRODUCTS.map(p => `
     <div class="product-card" onclick="window.location.href='${p.link}'">
       <div class="card-image" style="position: relative;">

@@ -126,9 +126,14 @@ function toggleCart() {
 function changeQuantity(id, change) {
   const item = cart.find(i => i.id === id);
   if (item) {
-    item.quantity += change;
-    if (item.quantity <= 0) removeFromCart(id);
-    else { updateCartUI(); saveCart(); }
+    const newQuantity = item.quantity + change;
+    if (newQuantity <= 0) {
+      removeFromCart(id);
+    } else {
+      item.quantity = newQuantity;
+      updateCartUI();
+      saveCart();
+    }
   }
 }
 
@@ -237,7 +242,9 @@ function showNotification(message, type) {
 
 // === BUY NOW FUNCTION ===
 function buyNow(productId, productName, price) {
-  addToCart(productId, productName, price, '', null);
+  const product = PRODUCTS.find(p => p.id === productId);
+  const imageUrl = product ? product.image : '';
+  addToCart(productId, productName, price, imageUrl, null);
   openLoginModal(productId);
 }
 
