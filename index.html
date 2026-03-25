@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -197,3 +198,204 @@
   <script src="script.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobify</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Login Modal (Single Instance) -->
+  <div id="loginModal" class="login-modal hidden">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+      <h3>Login to Confirm Order</h3>
+      <input type="text" id="username" placeholder="Enter Username or ID">
+      <input type="password" id="password" placeholder="Enter Password">
+      <button onclick="confirmOrder()">Confirm Order</button>
+      <p id="errorMsg"></p>
+    </div>
+  </div>
+
+  <!-- Confirmation Message -->
+  <div id="confirmBox" class="confirmation-box hidden">
+    <h2>✅ Order Confirmed!</h2>
+    <p>Thank you for shopping with us.</p>
+    <button onclick="closeConfirmation()">Close</button>
+  </div>
+
+  <!-- Top Notification Slider -->
+  <div class="swiper top-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">🔥 Mega Sale! Flat 50% OFF on Electronics – Limited Time Only!</div>
+      <div class="swiper-slide">🎁 Buy 1 Get 1 FREE on Mobile Accessories!</div>
+      <div class="swiper-slide">🎉 Festive Offer: Upto 60% OFF on Mobile Accessories</div>
+      <div class="swiper-slide">💳 Extra 10% OFF with HDFC & SBI Cards</div>
+      <div class="swiper-slide">🕒 Hurry! Flash Sale Ends Today!</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="main.html" class="logo">
+        <div class="logo-icon">🛒</div>
+        <div class="logo-text">
+          <h1>Mobify</h1>
+          <span>INDIA</span>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="main.html" class="nav-link active">Home</a></li>
+        <li><a href="main.html#products" class="nav-link" onclick="scrollToProducts()">Products</a></li>
+        <li><a href="contactUs.html" class="nav-link">Contact</a></li>
+        <li><a href="aboutUS.html" class="nav-link">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="Search products..." id="productSearch">
+          <span class="search-icon" id="searchBtn">🔍</span>
+          <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+        <button class="modern-cart-btn" onclick="toggleCart()">
+          <div class="cart-icon-wrapper">
+            <div class="cart-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="cart-badge" id="cartCount">0</span>
+            </div>
+          </div>
+          <div class="cart-text"><span class="cart-label">Cart</span></div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total">
+      <strong>Total: ₹<span id="cartTotal">0</span></strong>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Categories Section -->
+  <h2 class="headcat">Explore Our Category's</h2>
+  <div class="container">
+    <div class="categories-grid">
+      <div class="category-item">
+        <div class="category-circle" style="background: linear-gradient(135deg, #FF6B6B, #FFB3B3); display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="window.location.href='powerbank.html'">
+          <div style="font-size: 60px;">🔋</div>
+        </div>
+        <h3>Power Banks</h3>
+      </div>
+      <div class="category-item">
+        <div class="category-circle" style="background: linear-gradient(135deg, #4ECDC4, #7FE1D9); display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="window.location.href='miadpter.html'">
+          <div style="font-size: 60px;">⚡</div>
+        </div>
+        <h3>Chargers & Cables</h3>
+      </div>
+      <div class="category-item">
+        <div class="category-circle" style="background: linear-gradient(135deg, #45B7D1, #7FD4E0); display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="window.location.href='holder2.html'">
+          <div style="font-size: 60px;">📱</div>
+        </div>
+        <h3>Device Holder</h3>
+      </div>
+      <div class="category-item">
+        <div class="category-circle" style="background: linear-gradient(135deg, #F7DC6F, #FCED87); display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="window.location.href='RealmeEarbuds.html'">
+          <div style="font-size: 60px;">🎧</div>
+        </div>
+        <h3>Audio Devices</h3>
+      </div>
+      <div class="category-item">
+        <div class="category-circle" style="background: linear-gradient(135deg, #BB8FCE, #D4B3E6); display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="window.location.href='gopro.html'">
+          <div style="font-size: 60px;">📷</div>
+        </div>
+        <h3>Car & Travel</h3>
+      </div>
+      <div class="category-item">
+        <div class="category-circle" style="background: linear-gradient(135deg, #85C1E2, #B4DFF0); display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="scrollToProducts()">
+          <div style="font-size: 60px;">🛍️</div>
+        </div>
+        <h3>Other Utilities</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner Slider -->
+  <div class="swiper banner-image-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('banner1.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; position: relative;">
+      </div>
+      <div class="swiper-slide" style="background-image: url('banner2.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; position: relative;">
+      </div>
+      <div class="swiper-slide" style="background-image: url('banner3.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; position: relative;">
+      </div>
+      <div class="swiper-slide" style="background-image: url('banner4.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: #333; font-size: 40px; font-weight: bold; position: relative;">
+      </div>
+      <div class="swiper-slide" style="background-image: url('banner6.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; position: relative;">
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination banner-image-pagination"></div>
+  </div>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <div class="search-container">
+      <h2 class="search-heading">START YOUR SEARCH</h2>
+      <div class="dropdown-container">
+        <div class="dropdown">
+          <button class="dropdown-btn" onclick="toggleDropdown('deviceDropdown')">Search Products ▼</button>
+          <div class="dropdown-content" id="deviceDropdown">
+            <a href="vivoprotech.html">Vivo Y29 5G Tempered Glass Screen Protector</a>
+            <a href="vivobackcover.html">Vivo Y29 5G Back Cover</a>
+            <a href="adneckband.html">Wireless Bluetooth Neckband</a>
+            <a href="s25case.html">Samsung S25 Case Cover</a>
+            <a href="bluetoothspeaker.html">Bluetooth Speaker</a>
+            <a href="cable.html">Type-C Cable</a>
+            <a href="holder2.html">Phone Holder Stand</a>
+            <a href="powerbank.html">MI PowerBank</a>
+            <a href="RealmeEarbuds.html">Realme Earbuds</a>
+            <a href="earbuds.html">Wireless Bluetooth Headset</a>
+            <a href="s25protech.html">GALAXY S25 Screen Protector</a>
+            <a href="miadpter.html">Xiaomi Charger (33w)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <div class="page-container" id="products">
+    <h1 class="page-title"><marquee>Our Products</marquee></h1>
+    <div class="products-container">
+      <!-- Products rendered dynamically by products.js -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Mobify India. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 982f0a7be5b91eb469ac0b96dae10034f0309ba0

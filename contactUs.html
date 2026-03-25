@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -300,4 +301,308 @@
   <!-- Scripts -->
   <script src="script.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Mobify</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, #6cbde8, #3b82f6);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Info Cards */
+    .info-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin: 40px auto;
+      width: 90%;
+      max-width: 1000px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      text-align: center;
+    }
+
+    .info-card h3 {
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Form Section */
+    .contact-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    .contact-form, .contact-map {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .submit-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #7fbce1;
+    }
+
+    /* Map and Social */
+    iframe {
+      width: 100%;
+      height: 280px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .follow-section {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin-right: 15px;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+
+    .help-box {
+      background: linear-gradient(135deg, #5eaad6, #3b82f6);
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 30px auto;
+      text-align: center;
+      width: 90%;
+      max-width: 1000px;
+    }
+
+    .help-box a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      color: white;
+      border: 1px solid white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .help-box a:hover {
+      background: white;
+      color: #3b82f6;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="main.html" class="logo">
+        <div class="logo-icon">🛒</div>
+        <div class="logo-text">
+          <h1>Mobify</h1>
+          <span>INDIA</span>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="main.html" class="nav-link">Home</a></li>
+        <li><a href="main.html#products" class="nav-link">Products</a></li>
+        <li><a href="contactUs.html" class="nav-link active">Contact</a></li>
+        <li><a href="aboutUS.html" class="nav-link">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="Search products..." id="productSearch">
+          <span class="search-icon" id="searchBtn">🔍</span>
+        </div>
+        <button class="modern-cart-btn" onclick="toggleCart()">
+          <div class="cart-icon-wrapper">
+            <div class="cart-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="cart-badge" id="cartCount">0</span>
+            </div>
+          </div>
+          <div class="cart-text"><span class="cart-label">Cart</span></div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total">
+      <strong>Total: ₹<span id="cartTotal">0</span></strong>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <section class="header">
+    <h1>Get in Touch</h1>
+    <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="info-section">
+    <div class="info-card">
+      <div style="font-size:2.2rem; margin-bottom:8px;">📍</div>
+      <h3>Visit Our Store</h3>
+      <p>Modern Building No. 13279, Gali No.2,<br>Modern Colony, J.M. road,<br> Pune, 110005</p>
+    </div>
+    <div class="info-card">
+      <div style="font-size:2.2rem; margin-bottom:8px;">📞</div>
+      <h3>Call Us</h3>
+      <p>+91 7058505251</p>
+      <p>+91 9168144066</p>
+      <p>Tue–Sun: 11:00 AM – 8:00 PM</p>
+    </div>
+    <div class="info-card">
+      <div style="font-size:2.2rem; margin-bottom:8px;">✉️</div>
+      <h3>Email Us</h3>
+      <p>mobify@gmail.com</p>
+      <p>mobify1@gmail.com</p>
+    </div>
+    <div class="info-card">
+      <div style="font-size:2.2rem; margin-bottom:8px;">⏰</div>
+      <h3>Business Hours</h3>
+      <p>Tuesday – Sunday: 11:00 AM – 8:00 PM</p>
+      <p>Monday: Closed</p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Map -->
+  <section class="contact-section">
+    <div class="contact-form">
+      <h2>Send us a Message</h2>
+      <form>
+        <label>Full Name *</label>
+        <input type="text" placeholder="Enter your full name" required>
+
+        <label>Email Address *</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="10-digit number">
+
+        <label>Department</label>
+        <select>
+          <option>Select Query Type</option>
+          <option>Sales</option>
+          <option>Support</option>
+          <option>General Inquiry</option>
+        </select>
+
+        <label>Message *</label>
+        <textarea placeholder="Tell us how we can help you..." maxlength="1000" required></textarea>
+
+        <button class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+    <div class="contact-map">
+      <h2>Find Us</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.246469181049!2d73.8567433148439!3d18.52043028739647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1c1c1c1c1c1%3A0x1c1c1c1c1c1c1c!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+
+      <div class="follow-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#">📘</a>
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Help Box -->
+  <div class="help-box">
+    <h3>Need Immediate Help?</h3>
+    <p>For urgent inquiries, call us directly or chat with our support team.</p>
+    <a href="tel:+91 7058505251">Call Now</a>
+    <a href="https://wa.me/919650673048">WhatsApp</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+>>>>>>> 982f0a7be5b91eb469ac0b96dae10034f0309ba0
 </html>

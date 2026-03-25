@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Common Navigation Bar -->
 <nav class="navbar">
   <div class="nav-container">
@@ -45,4 +46,53 @@
     <strong>Total: ₹<span id="cartTotal">0</span></strong>
     <button class="checkout-btn" onclick="checkout()">Checkout</button>
   </div>
+=======
+<!-- Common Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="main.html" class="logo">
+      <div class="logo-icon">🛒</div>
+      <div class="logo-text">
+        <h1>Mobify</h1>
+        <span>INDIA</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="main.html" class="nav-link">Home</a></li>
+      <li><a href="main.html#products" class="nav-link" onclick="scrollToProducts()">Products</a></li>
+      <li><a href="contactUs.html" class="nav-link">Contact</a></li>
+      <li><a href="aboutUS.html" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="Search products..." id="productSearch">
+        <span class="search-icon" id="searchBtn">🔍</span>
+      </div>
+      <button class="modern-cart-btn" onclick="toggleCart()">
+        <div class="cart-icon-wrapper">
+          <div class="cart-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="cart-badge" id="cartCount">0</span>
+          </div>
+        </div>
+        <div class="cart-text"><span class="cart-label">Cart</span></div>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h3>Shopping Cart</h3>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-total">
+    <strong>Total: ₹<span id="cartTotal">0</span></strong>
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+  </div>
+>>>>>>> 982f0a7be5b91eb469ac0b96dae10034f0309ba0
 </div>
